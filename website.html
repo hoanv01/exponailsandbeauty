@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expo Nails</title>
+  <link rel="icon" href="logooo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <div class="header">
+      <a href="website.html">
+        <h1 class="title"> 
+        <img src="logooo.png" alt="Logo" class="logo">
+        <b>Expo</b> <b class="colortext">Nails</b>
+        </h1>
+        <nav class="navbar">
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </a>
+    </div>
+  
+    <!-- Fade Carousel -->
+    <div class="fade-carousel fade-in-on-scroll">
+      <img src="https://antdisplay.com/pub/media/magefan_blog/Slide2_1.jpg" class="fade-slide">
+      <img src="https://img1.wsimg.com/isteam/ip/a4e7a525-b2b6-4509-9b69-5c0bd500c5b2/salon%20pic.jpg/:/rs=h:1000,cg:true,m" class="fade-slide">
+      <img src="https://nailsenvie.com/miami.fl/wp-content/uploads/2018/10/slide5.jpg" class="fade-slide">
+      <img src="https://t4.ftcdn.net/jpg/04/07/88/55/360_F_407885571_2xi6cu3Wqa01yxl9D7KfrvYotRu5IOVB.jpg" class="fade-slide">
+      <img src="https://t4.ftcdn.net/jpg/04/07/63/11/360_F_407631124_3WuarIJ9MWyO8thEqCrJdZSFfvDT0Ohu.jpg" class="fade-slide">
+
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      <!-- Carousel Dots -->
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </div>     
+
+    <!-- Bio Section -->
+    <div>
+      <h3 class="bio">Welcome to Expo Nails — Where Beauty Begins at Your Fingertips.</h3>
+      <p class="bio">
+        At Expo Nails, we believe that your nails are a reflection of your unique style and personality.
+        Our mission is to provide top-tier nail care in a clean, relaxing, and welcoming environment.
+        Whether you are here for a classic manicure, a stunning gel set, or creative nail art,
+        our talented technicians are dedicated to bringing your vision to life. <br><br>
+        With high-quality products, a passion for detail, and a commitment to customer satisfaction,
+        Expo Nails is your go-to destination for elegance and self-care. <br><br>
+         Walk in with confidence, walk out with perfection. 
+      </p>
+
+      <!-- Add the "About Us" link below -->
+      <div class="center-button">
+        <a href="about.html" class="btn">
+          <i class="fas fa-info-circle"></i> Learn More About Us
+        </a>
+      </div>      
+    </div>
+  
+    <!-- Services Section -->
+    <div id="services" class="services-section">
+      <h2 class="services-heading">~ Our Services ~</h2>
+      <!-- Wrapper for services and image -->
+      <div class="services-wrapper">
+        <div class="services-container">
+          <div class="accordion">
+            <!-- Acrylic Nail -->
+            <div class="accordion-item">
+              <button class="accordion-header">Acrylic Nail <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Full Set — <strong>$35.00+</strong></p>
+                <p>Full Set Gel — <strong>$40.00+</strong></p>
+                <p>Fill In — <strong>$25.00+</strong></p>
+                <p>Fill In Gel — <strong>$35.00+</strong></p>
+              </div>
+            </div>
+      
+            <!-- Pink & White -->
+            <div class="accordion-item">
+              <button class="accordion-header">Pink & White <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Full Set — <strong>$50.00+</strong></p>
+                <p>Fill In (2 Color) — <strong>$40.00+</strong></p>
+                <p>Fill In (1 Color) — <strong>$35.00+</strong></p>
+              </div>
+            </div>
+      
+            <!-- Powder Gel -->
+            <div class="accordion-item">
+              <button class="accordion-header">Powder Gel <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Full Set — <strong>$45.00+</strong></p>
+                <p>Fill In — <strong>$35.00+</strong></p>
+                <p>Powder Overlay — <strong>$45.00+</strong></p>
+              </div>
+            </div>
+      
+            <!-- Powder Ombre -->
+            <div class="accordion-item">
+              <button class="accordion-header">Powder Ombre <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Full Set — <strong>$50.00+</strong></p>
+                <p>Fill In (2 Color) — <strong>$45.00+</strong></p>
+                <p>Fill In (1 Color) — <strong>$30.00+</strong></p>
+              </div>
+            </div>
+      
+            <!-- Natural Nail Manicure -->
+            <div class="accordion-item">
+              <button class="accordion-header">Natural Nail Manicure <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Manicure (Regular Polish) — <strong>$25.00+</strong></p>
+                <p>Gel Polish Manicure — <strong>$35.00+</strong></p>
+                <p>Gel Polish Change — <strong>$25.00+</strong></p>
+              </div>
+            </div>
+      
+            <!-- Dip Powder -->
+            <div class="accordion-item">
+              <button class="accordion-header">Dip Powder <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Ombre Dip — <strong>$55.00+</strong></p>
+                <p>Dip w/ 1 Color — <strong>$45.00+</strong></p>
+                <p>Add Nail Tip — <strong>$5.00+</strong></p>
+              </div>
+            </div>
+      
+            <!-- Kid's Menu -->
+            <div class="accordion-item">
+              <button class="accordion-header">Kid’s Menu <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Manicure (Regular Polish) — <strong>$15.00+</strong></p>
+                <p>Gel Polish Manicure — <strong>$30.00+</strong></p>
+                <p>Gel Polish Hand — <strong>$20.00+</strong></p>
+                <p>Pedicure — <strong>$25.00+</strong></p>
+              </div>
+            </div>
+      
+            <!-- Spa Pedicure -->
+            <div class="accordion-item">
+              <button class="accordion-header">Spa Pedicure <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Royal Sauna Pedi (Reg) — <strong>$85.00+</strong></p>
+                <p>Royal Sauna Pedi with Gel — <strong>$100.00+</strong></p>
+                <p>Basic Pedi (Reg) — <strong>$35.00+</strong></p>
+                <p>Basic Pedi with Gel — <strong>$50.00+</strong></p>
+                <p>Deluxe Pedi (Reg) — <strong>$45.00+</strong></p>
+                <p>Deluxe Pedi with Gel — <strong>$60.00+</strong></p>
+                <p>Luxury Pedi Reg (Volcano) — <strong>$55.00+</strong></p>
+                <p>Luxury Pedi with Gel — <strong>$70.00+</strong></p>
+                <p>Add Paraffin Wax — <strong>+$15.00</strong></p>
+              </div>
+            </div>
+      
+            <!-- Additional Services -->
+            <div class="accordion-item">
+              <button class="accordion-header">Additional Services <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Toe Nails Full Set w/ Gel — <strong>$45.00+</strong></p>
+                <p>Toe Nails Powder Full Set w/ Gel — <strong>$50.00+</strong></p>
+                <p>Polish Change Hand — <strong>$15.00+</strong></p>
+                <p>Polish Change Feet — <strong>$15.00+</strong></p>
+                <p>French Manicure Add On — <strong>$5.00+</strong></p>
+                <p>Nail Design / Nail Repair / Gel Polish Removal — <strong>$5.00+</strong></p>
+                <p>Acrylic Remove w/o Services — <strong>$10.00+</strong></p>
+              </div>
+            </div>
+      
+            <!-- Wax Services -->
+            <div class="accordion-item">
+              <button class="accordion-header">Wax Services <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Eyebrow — <strong>$12.00+</strong></p>
+                <p>Upper Lips — <strong>$10.00+</strong></p>
+                <p>Chin — <strong>$15.00+</strong></p>
+                <p>Whole Face — <strong>$30.00+</strong></p>
+                <p>Underarm — <strong>$30.00+</strong></p>
+                <p>Legs — <strong>$50.00+/Half</strong></p>
+                <p>Arms — <strong>$40.00+</strong></p>
+                <p>Bikini Wax — <strong>$75.00+</strong></p>
+                <p>Brazilian Wax — <strong>$100.00+</strong></p>
+              </div>
+            </div>
+      
+            <!-- Eyebrow -->
+            <div class="accordion-item">
+              <button class="accordion-header">Eyebrow Services <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Eyebrow Tint — <strong>$25+</strong></p>
+                <p>Microblading — <strong>Price Varies</strong></p>
+              </div>
+            </div>
+      
+            <!-- Eyelash -->
+            <div class="accordion-item">
+              <button class="accordion-header">Eyelash Services <span class="arrow">&#9662;</span></button>
+              <div class="accordion-body">
+                <p>Strip — <strong>$20.00+</strong></p>
+                <p>Strip + Individual — <strong>$30.00+</strong></p>
+                <p>Individual — <strong>$30.00+</strong></p>
+                <p>Individual Mink — <strong>$150.00+</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <!-- Image Next to Services -->
+        <div class="services-image">
+          <img src="https://prettynails-nc.com/assets/images/pretty-nails-service-02.jpg" alt="Beautiful Nails" />
+        </div>
+      </div>
+    </div>
+  
+    <!-- Scrolling Image Gallery -->
+    <div id="gallery" class="scroll-gallery">
+      <div class="scroll-track">
+        <!-- Duplicate images to loop -->
+        <img src="https://i.ebayimg.com/images/g/Ml0AAOSwUqBitqvh/s-l1200.jpg">
+        <img src="https://www.byrdie.com/thmb/zQ9CxzV_WYJMjs1xpMfX0Uho1zk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Mint-Green-Floral-Nails-Byrdie-Spring-Gel-Nails-9f7304aab67945cf8c3a1fd972026085.jpg">
+        <img src="https://i.ebayimg.com/images/g/ZNEAAOSwV41k0LPX/s-l1200.jpg">
+        <img src="https://media.glamourmagazine.co.uk/photos/66d1b1ad94d5017f0a75866d/1:1/w_1081,h_1081,c_limit/BOW%20NAILS%20300824%20MAIN.jpg">
+        <img src="https://btartboxnails.com/cdn/shop/files/1_23f3a0c8-aeb0-484e-9118-010f2aa1cbcd_grande.jpg?v=1732088904">
+        <img src="https://www.instyle.com/thmb/xweHAUb8ivCC_86Z3fy3RRnPlYE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/020422-Coffin-Nail-Shape-Designs-Lead-2000-49c35703b04c4f78a4a725bb10d1f8a6.jpg">
+  
+        <img src="https://i.ebayimg.com/images/g/Ml0AAOSwUqBitqvh/s-l1200.jpg">
+        <img src="https://www.byrdie.com/thmb/zQ9CxzV_WYJMjs1xpMfX0Uho1zk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Mint-Green-Floral-Nails-Byrdie-Spring-Gel-Nails-9f7304aab67945cf8c3a1fd972026085.jpg">
+        <img src="https://i.ebayimg.com/images/g/ZNEAAOSwV41k0LPX/s-l1200.jpg">
+        <img src="https://media.glamourmagazine.co.uk/photos/66d1b1ad94d5017f0a75866d/1:1/w_1081,h_1081,c_limit/BOW%20NAILS%20300824%20MAIN.jpg">
+        <img src="https://btartboxnails.com/cdn/shop/files/1_23f3a0c8-aeb0-484e-9118-010f2aa1cbcd_grande.jpg?v=1732088904">
+        <img src="https://www.instyle.com/thmb/xweHAUb8ivCC_86Z3fy3RRnPlYE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/020422-Coffin-Nail-Shape-Designs-Lead-2000-49c35703b04c4f78a4a725bb10d1f8a6.jpg">
+      </div>
+    </div>
+  
+    <!-- Static Image Gallery Section -->
+    <div class="image-gallery">
+      <h2 class="gallery-heading">Our Recent Work</h2>
+      <div class="gallery-grid">
+        <a href="https://i.ebayimg.com/images/g/Ml0AAOSwUqBitqvh/s-l1200.jpg">
+          <img src="https://i.ebayimg.com/images/g/Ml0AAOSwUqBitqvh/s-l1200.jpg">
+        </a>
+        <a href="https://www.byrdie.com/thmb/zQ9CxzV_WYJMjs1xpMfX0Uho1zk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Mint-Green-Floral-Nails-Byrdie-Spring-Gel-Nails-9f7304aab67945cf8c3a1fd972026085.jpg">
+          <img src="https://www.byrdie.com/thmb/zQ9CxzV_WYJMjs1xpMfX0Uho1zk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Mint-Green-Floral-Nails-Byrdie-Spring-Gel-Nails-9f7304aab67945cf8c3a1fd972026085.jpg">
+        </a>
+        <a href="https://i.ebayimg.com/images/g/ZNEAAOSwV41k0LPX/s-l1200.jpg">
+          <img src="https://i.ebayimg.com/images/g/ZNEAAOSwV41k0LPX/s-l1200.jpg">
+        </a>
+        <a href="https://media.glamourmagazine.co.uk/photos/66d1b1ad94d5017f0a75866d/1:1/w_1081,h_1081,c_limit/BOW%20NAILS%20300824%20MAIN.jpg">
+          <img src="https://media.glamourmagazine.co.uk/photos/66d1b1ad94d5017f0a75866d/1:1/w_1081,h_1081,c_limit/BOW%20NAILS%20300824%20MAIN.jpg">
+        </a>
+        <a href="https://btartboxnails.com/cdn/shop/files/1_23f3a0c8-aeb0-484e-9118-010f2aa1cbcd_grande.jpg?v=1732088904">
+          <img src="https://btartboxnails.com/cdn/shop/files/1_23f3a0c8-aeb0-484e-9118-010f2aa1cbcd_grande.jpg?v=1732088904">
+        </a>
+        <a href="https://i0.wp.com/greenweddingshoes.com/wp-content/uploads/2025/02/classy-almond-shaped-spring-nails-with-chocolate-flower-designs.jpg?fit=1024%2C9999">
+          <img src="https://i0.wp.com/greenweddingshoes.com/wp-content/uploads/2025/02/classy-almond-shaped-spring-nails-with-chocolate-flower-designs.jpg?fit=1024%2C9999">
+        </a>
+        <a href="https://www.curvlife.com/cdn/shop/files/O1CN01G0Tn4H2NGHsUkuZzO__4234819935-0-cib.jpg?v=1738832027">
+          <img src="https://www.curvlife.com/cdn/shop/files/O1CN01G0Tn4H2NGHsUkuZzO__4234819935-0-cib.jpg?v=1738832027">
+        </a>
+        <a href="https://lelotuslondon.co.uk/wp-content/uploads/2024/01/Which-Nail-Shape-is-Right-for-You-02.jpg">
+          <img src="https://lelotuslondon.co.uk/wp-content/uploads/2024/01/Which-Nail-Shape-is-Right-for-You-02.jpg">
+        </a>
+        <a href="https://hips.hearstapps.com/hmg-prod/images/simple-nail-designs-649ede8685c52.png?crop=0.498xw:0.990xh;0.502xw,0&resize=640:*">
+          <img src="https://hips.hearstapps.com/hmg-prod/images/simple-nail-designs-649ede8685c52.png?crop=0.498xw:0.990xh;0.502xw,0&resize=640:*">
+        </a>
+        <a href="https://i.pinimg.com/736x/e1/81/c4/e181c4c7708e04f5d7060471540a0e6b.jpg">
+          <img src="https://i.pinimg.com/736x/e1/81/c4/e181c4c7708e04f5d7060471540a0e6b.jpg">
+        </a>
+        <a href="https://i.pinimg.com/564x/67/30/68/673068e72372403bccb34f8a08f1c1bc.jpg">
+          <img src="https://i.pinimg.com/564x/67/30/68/673068e72372403bccb34f8a08f1c1bc.jpg">
+        </a>
+        <a href="https://i.pinimg.com/564x/1a/21/87/1a2187007990c7020513dfe712de8fc1.jpg">
+          <img src="https://i.pinimg.com/564x/1a/21/87/1a2187007990c7020513dfe712de8fc1.jpg">
+        </a>
+      </div>    
+      
+      <div class="center-button">
+        <a href="gallery.html" class="btn">
+          <i class="fas fa-images"></i> View More
+        </a>
+      </div>
+        
+    </div>
+
+    <!-- Feature Section -->
+    <div class="feature-section">
+      <div class="feature">
+        <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+        <h3 class="feature-title">Top-Quality Therapies</h3>
+        <p>Relax and rejuvenate with our premium nail and lash services designed to promote beauty, comfort, and wellness.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><i class="fas fa-users"></i></div>
+        <h3 class="feature-title">Happy Clients</h3>
+        <p>We use trusted, high-end products to ensure your satisfaction and long-lasting results every visit.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+        <h3 class="feature-title">Certified Technicians</h3>
+        <p>Our staff is fully trained in sanitation protocols, ensuring safety and professionalism for every guest.</p>
+      </div>
+    </div>
+    
+    <!-- map -->
+    <div class="map-section">
+      <h2>Visit Us</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6742.376110637115!2d-90.31397369999999!3d32.333660699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86284abdbf2a63a1%3A0xb62b7182d91b7338!2sexpo%20nails%20and%20beauty!5e0!3m2!1sen!2sus!4v1742637644896!5m2!1sen!2sus" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+    
+    <!-- Social Links -->
+    <div id="contact" class="social-links">
+      <a href="https://www.instagram.com/exponailsnbeauty/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon"> Instagram
+      </a>
+      <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon"> Facebook
+      </a>
+    </div>
+  
+    <!-- Footer -->
+    <footer>
+      <p><i class="fas fa-map-marker-alt"></i> 212-B Clinton Blvd, Clinton, Mississippi 39056</p>
+      <p><i class="fas fa-phone-alt"></i> (601) 924-1413</p>
+      <p><i class="fas fa-envelope"></i> exponails2019@gmail.com</p>
+      <p><i class="fas fa-clock"></i> Open Hours: Monday – Saturday, 9:00 AM – 7:00 PM</p>
+      <p><i class="fas fa-calendar-check"></i> <strong>We welcome walk-ins only—no appointment needed!</strong></p>
+    </footer>
+    
+    <div>
+      <br><br><br><br><br>
+      <p class="endings">Expo Nails & Beauty © All Rights Reserved - 2025 - Designed by Hoan Tran <br><br>
+        <a href="website.html">Expo Nails & Beauty</a> <b>|</b>
+        <a href="website.html">Nails salon in Clinton, MS 39056</a> <b>|</b>
+        <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/">Blog</a>
+      </p>
+      <br>
+    </div>
+
+    <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>    
+    
+    <script>
+      const headers = document.querySelectorAll(".accordion-header");
+  
+      headers.forEach(header => {
+        header.addEventListener("click", () => {
+          const item = header.parentElement;
+          const isActive = item.classList.contains("active");
+  
+          // Close all
+          document.querySelectorAll(".accordion-item").forEach(i => i.classList.remove("active"));
+  
+          // Toggle current
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        });
+      });
+    </script>
+    <script>
+      // Show the button when scrolling down
+      window.onscroll = function () {
+        const scrollBtn = document.getElementById("scrollBtn");
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
+        }
+      };
+    
+      // Scroll to top smoothly
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    </script>
+    <script>
+      // Select all the images inside the scroll track
+      const images = document.querySelectorAll('.scroll-track img');
+      const scrollTrack = document.querySelector('.scroll-track');
+
+      let isPaused = false; // Track the scroll state
+
+      // Function to pause scrolling
+      function pauseScroll() {
+        scrollTrack.style.animationPlayState = 'paused';
+        isPaused = true;
+      }
+
+      // Function to resume scrolling
+      function resumeScroll() {
+        scrollTrack.style.animationPlayState = 'running';
+        isPaused = false;
+      }
+
+      // Add click event to each image
+      images.forEach((img) => {
+        img.addEventListener('click', () => {
+          if (isPaused) {
+            resumeScroll(); // Resume if paused
+          } else {
+            pauseScroll(); // Pause if running
+          }
+        });
+      });
+    </script>
+
+    <script>
+      let slideIndex = 0;
+      let slides = document.getElementsByClassName("fade-slide");
+      let autoSlideInterval;
+      let paused = false;
+      const dotsContainer = document.getElementById("carousel-dots");
+
+      // Create dots dynamically
+      for (let i = 0; i < slides.length; i++) {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        dot.addEventListener("click", () => {
+          slideIndex = i;
+          showSlides(slideIndex);
+          resetAutoSlide();
+        });
+        dotsContainer.appendChild(dot);
+      }
+
+      function showSlides(n) {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.opacity = "0";
+          slides[i].classList.remove("active");
+        }
+        slides[n].style.opacity = "1";
+        slides[n].classList.add("active");
+        updateDots(n);
+      }
+
+      function updateDots(index) {
+        const dots = document.querySelectorAll(".carousel-dots .dot");
+        dots.forEach(dot => dot.classList.remove("active"));
+        if (dots[index]) {
+          dots[index].classList.add("active");
+        }
+      }
+
+      function moveSlide(n) {
+        clearInterval(autoSlideInterval);
+        slideIndex += n;
+
+        if (slideIndex >= slides.length) slideIndex = 0;
+        if (slideIndex < 0) slideIndex = slides.length - 1;
+
+        showSlides(slideIndex);
+        if (!paused) startAutoSlide();
+      }
+
+      function autoSlide() {
+        moveSlide(1);
+      }
+
+      function startAutoSlide() {
+        if (paused) return;
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(autoSlide, 5000);
+      }
+
+      function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+      }
+
+      // Init
+      showSlides(slideIndex);
+      startAutoSlide();
+
+      const carousel = document.querySelector(".fade-carousel");
+      carousel.addEventListener("mouseenter", () => {
+        paused = true;
+        clearInterval(autoSlideInterval);
+      });
+
+      carousel.addEventListener("mouseleave", () => {
+        paused = false;
+        startAutoSlide();
+      });
+    </script>
+
+    <div id="lightbox" class="lightbox">
+      <button class="lightbox-prev">&#10094;</button>
+      <img class="lightbox-content" id="lightbox-img">
+      <button class="lightbox-next">&#10095;</button>
+      <span class="close">&times;</span>
+    </div>    
+  
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.querySelector(".lightbox .close");
+    
+      const galleryLinks = document.querySelectorAll(".gallery-grid a");
+      const imageUrls = Array.from(galleryLinks).map(link => link.href);
+      let currentIndex = 0;
+    
+      // Open lightbox
+      galleryLinks.forEach((anchor, index) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          currentIndex = index;
+          showLightboxImage(currentIndex);
+        });
+      });
+    
+      function showLightboxImage(index) {
+        lightbox.style.display = "block";
+        lightboxImg.src = imageUrls[index];
+
+        // Disable prev on first image
+        if (index === 0) {
+          prevBtn.classList.add("disabled");
+        } else {
+          prevBtn.classList.remove("disabled");
+        }
+
+        // Disable next on last image
+        if (index === imageUrls.length - 1) {
+          nextBtn.classList.add("disabled");
+        } else {
+          nextBtn.classList.remove("disabled");
+        }
+      }
+    
+      // Close on "X" click
+      closeBtn.onclick = () => lightbox.style.display = "none";
+    
+      // Close on outside click
+      window.onclick = function (e) {
+        if (e.target === lightbox) {
+          lightbox.style.display = "none";
+        }
+      };
+    
+      // Keyboard navigation
+      document.addEventListener("keydown", function (e) {
+        if (lightbox.style.display === "block") {
+          if (e.key === "ArrowRight" && currentIndex < imageUrls.length - 1) {
+            currentIndex++;
+            showLightboxImage(currentIndex);
+          } else if (e.key === "ArrowLeft" && currentIndex > 0) {
+            currentIndex--;
+            showLightboxImage(currentIndex);
+          } else if (e.key === "Escape") {
+            lightbox.style.display = "none";
+          }
+        }
+      });
+    
+      // Swipe gestures for mobile
+      let startX = 0;
+      lightbox.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+      });
+    
+      lightbox.addEventListener("touchend", e => {
+        const endX = e.changedTouches[0].clientX;
+        if (endX < startX - 50 && currentIndex < imageUrls.length - 1) {
+          currentIndex++;
+          showLightboxImage(currentIndex);
+        } else if (endX > startX + 50 && currentIndex > 0) {
+          currentIndex--;
+          showLightboxImage(currentIndex);
+        }
+      });
+    </script>    
+    <script>
+      const prevBtn = document.querySelector(".lightbox-prev");
+      const nextBtn = document.querySelector(".lightbox-next");
+
+      prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          showLightboxImage(currentIndex);
+        }
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (currentIndex < imageUrls.length - 1) {
+          currentIndex++;
+          showLightboxImage(currentIndex);
+        }
+      });
+    </script>
+
+    <script>
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // only animate once
+          }
+        });
+      }, { threshold: 0.1 });
+
+      // Observe all elements with .fade-in-on-scroll
+      document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+
+    <a href="tel:6019241413" class="call-icon" title="Call Us">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+
+</body>
+</html>
