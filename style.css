@@ -45,7 +45,7 @@ h1.title {
   font-size: 50px;
   margin: 0;
   letter-spacing: 5px;
-  font-family: cursive, Georgia;
+  font-family: "Pacifico", cursive, Georgia; /* Replace existing font-family with this */
 }
 
 b.colortext {
@@ -293,8 +293,8 @@ b.colortext {
   justify-content: center;
   gap: 40px;
   padding: 10px 0;
-  background: fefefe;
-  font-family: cursive, Georgia;
+  background: #fefefe;
+  font-family: "Pacifico", cursive, Georgia; /* Replace existing font-family with this */
 }
 
 .navbar a {
