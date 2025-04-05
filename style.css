@@ -21,7 +21,6 @@ body {
   }
 }
 
-/* Fixed Header */
 .header {
   position: fixed;
   top: 0;
@@ -30,6 +29,18 @@ body {
   z-index: 999;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   background-color: #f7f7f7;
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+body {
+  padding-top: calc(150px + env(safe-area-inset-top));
+  box-sizing: border-box;
+}
+
+/* Optional: Full-screen elements */
+.full-screen-element {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .header a {
@@ -41,11 +52,13 @@ h1.title {
   background-color: lavender;
   text-align: center;
   padding: 10px;
-  font-weight: 100;
   font-size: 50px;
   margin: 0;
   letter-spacing: 5px;
-  font-family: "Pacifico", cursive, Georgia; /* Replace existing font-family with this */
+  font-family: "Pacifico", cursive, Georgia;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 b.colortext {
@@ -57,7 +70,7 @@ b.colortext {
   width: auto;
   vertical-align: middle;
   margin-right: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .logo:hover {
@@ -65,6 +78,18 @@ b.colortext {
   transition: 0.3s ease;
 }
 
+@media screen and (max-width: 768px) {
+  h1.title {
+    font-size: 40px;
+  }
+  .logo {
+    height: 60px;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 /* Carousel Images */
 /* Fade Carousel */
 .fade-carousel {
@@ -294,7 +319,7 @@ b.colortext {
   gap: 40px;
   padding: 10px 0;
   background: #fefefe;
-  font-family: "Pacifico", cursive, Georgia; /* Replace existing font-family with this */
+  font-family: "Pacifico", cursive, Georgia;
 }
 
 .navbar a {
@@ -302,6 +327,7 @@ b.colortext {
   color: rgb(150, 150, 255);
   font-weight: bold;
   font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .navbar a:hover {
@@ -948,5 +974,3 @@ user know that they can swipe (for static gallery)
 6. The white part of the island 
 7. Phone number has the underline
 */
-
-/*Carousel swiping work but it is not smooth*/
