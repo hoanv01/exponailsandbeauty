@@ -15,6 +15,12 @@ body {
   overflow-x: hidden;
 }
 
+@supports (padding-top: env(safe-area-inset-top)) {
+  body {
+    padding-top: calc(150px + env(safe-area-inset-top));
+  }
+}
+
 /* Fixed Header */
 .header {
   position: fixed;
@@ -39,7 +45,7 @@ h1.title {
   font-size: 50px;
   margin: 0;
   letter-spacing: 5px;
-  font-family: Apple Chancery, cursive;
+  font-family: cursive, Georgia;
 }
 
 b.colortext {
@@ -67,7 +73,7 @@ b.colortext {
   width: 100%;
   position: relative;
   margin: 50px auto;
-  margin-top: 9px;
+  margin-top: 0; /* Replace margin-top: 9px with this */
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
@@ -81,6 +87,26 @@ b.colortext {
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.5s ease-in-out;
   transform: translateX(0);
+}
+
+.slides-wrapper {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.fade-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.fade-carousel {
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
 }
 
 /* Show active slide */
@@ -169,6 +195,34 @@ b.colortext {
   opacity: 1;
 }
 
+.fade-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 2.77 / 1;
+}
+
+.fade-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.4s ease; /* 👈 Smooth transform */
+  transform: translateX(0); /* 👈 Needed for drag shift */
+  pointer-events: none; /* Prevent image interaction while dragging */
+}
+
+.fade-slide.active {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.fade-carousel.dragging .fade-slide.active {
+  transition: none; /* 👈 Disable transition while dragging for real-time follow */
+}
+
 /* Responsive Carousel */
 @media screen and (max-width: 768px) {
   .fade-carousel {
@@ -219,7 +273,7 @@ b.colortext {
 }
 
 .about-container h2 {
-  font-family: "Apple Chancery", cursive;
+  font-family: Lucida;
   font-size: 32px;
   color: goldenrod;
   margin-bottom: 20px;
@@ -227,6 +281,7 @@ b.colortext {
 
 .about-container p {
   font-size: 18px;
+  font-family: Lucida;
   color: #555;
   line-height: 1.6;
   margin-bottom: 15px;
@@ -239,7 +294,7 @@ b.colortext {
   gap: 40px;
   padding: 10px 0;
   background: fefefe;
-  font-family: cursive;
+  font-family: cursive, Georgia;
 }
 
 .navbar a {
@@ -259,8 +314,8 @@ h3.bio {
   padding: 10px;
   color: rgb(45, 45, 45);
   font-size: 25px;
-  font-weight: bolder;
-  font-family: URW Chancery L, cursive;
+  font-weight: lighter;
+  font-family: Lucida;
   background-color: none;
   border: solid;
   max-width: 95%;
@@ -270,7 +325,7 @@ h3.bio {
 
 p.bio {
   text-align: justify;
-  font-family: serif;
+  font-family: Lucida;
   margin: 15px;
   padding: 0px 20px;
   font-weight: 500;
@@ -302,7 +357,8 @@ p.bio {
   font-size: 30px;
   margin-top: 50px;
   margin-bottom: 0px;
-  font-family: "Apple Chancery", cursive;
+  font-family: Times;
+  font-weight: lighter;
   text-align: center;
   border: solid thin;
   color: black;
@@ -338,14 +394,14 @@ p.bio {
 .accordion-header {
   background-color: rgb(240, 240, 255);
   color: #4a4a4a;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 18px;
   padding: 18px 24px;
   width: 100%;
   border: none;
   text-align: left;
   cursor: pointer;
-  font-family: "Apple Chancery", cursive;
+  font-family: Times;
   transition: background 0.3s ease;
   display: flex;
   justify-content: space-between;
@@ -482,6 +538,13 @@ footer {
   box-sizing: border-box;
 }
 
+.phone-link,
+.email-link,
+.call-icon {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Map Section */
 .map-section {
   padding: 0 0 80px 0;
@@ -493,7 +556,7 @@ footer {
 }
 
 .map-section h2 {
-  font-family: "Apple Chancery", cursive;
+  font-family: cursive;
   font-size: 28px;
   border-bottom: 2px solid goldenrod;
   display: inline-block;
@@ -585,7 +648,7 @@ footer {
 #scrollBtn {
   display: none; /* Hidden by default */
   position: fixed;
-  bottom: 12px;
+  bottom: 72px;
   right: 10px;
   z-index: 1000;
   font-size: 20px;
@@ -700,9 +763,37 @@ footer {
   transition: transform 0.3s ease;
 }
 
-
 .gallery-grid img:hover {
   transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    position: relative;
+  }
+  .gallery-grid a {
+    flex: 0 0 250px;
+    scroll-snap-align: start;
+  }
+  .gallery-grid img {
+    width: 250px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+  .gallery-grid::after {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #666;
+    pointer-events: none;
+  }
 }
 
 /*LIGHT Box*/
@@ -823,18 +914,18 @@ footer {
 
 .call-icon {
   position: fixed;
-  bottom: 100px; /* Same as #scrollBtn */
-  left: 10px;   /* Matches right: 10px on #scrollBtn */
+  bottom: 12px; /* Same as #scrollBtn */
+  right: 10px;   /* Matches right: 10px on #scrollBtn */
   background-color: goldenrod;
   color: white;
   font-size: 20px;
-  padding: 12px 32px;
-  border-radius: 8px;
+  padding: 12px 16px;
+  border-radius: 50%;
   z-index: 1000; /* Match scroll button */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   transition: background-color 0.3s ease;
-  opacity: 80%;
+  opacity: 75%;
 }
 
 .call-icon:hover {
@@ -845,3 +936,17 @@ footer {
 .call-icon i {
   transform: scaleX(-1); /* Inverts the phone icon */
 }
+
+
+/* Mobile Iphone 
+1. The swiping is grippy and not smooth, consider add like something to let the
+user know that they can swipe (for static gallery)
+2. The font is weird in safari and brave
+3. The white part at the top fade carousel slips out a little bit
+4. Also add smooth swipe for Carousel
+5. For static gallery you can exit touching the black but you can for view more
+6. The white part of the island 
+7. Phone number has the underline
+*/
+
+/*Carousel swiping work but it is not smooth*/
