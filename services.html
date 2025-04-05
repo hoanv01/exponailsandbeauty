@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Services | Expo Nails</title>
+  <link rel="icon" href="logooo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+/* Service Section Styling */
+.services-section {
+  background-color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services-heading {
+  font-family: "Lucida", serif;
+  font-size: 32px;
+  color: black;
+  margin-bottom: 40px;
+  display: inline-block;
+  padding-bottom: 8px;
+  border: none;
+}
+
+.services-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.services-container {
+  flex: 1 1 60%;
+}
+
+.service-group {
+  background-color: #fefefe;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-left: 5px solid goldenrod;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.service-group h3 {
+  font-size: 22px;
+  color: goldenrod;
+  margin-bottom: 12px;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 5px;
+  font-family: "Lucida", serif;
+}
+
+.service-group p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  margin: 6px 0;
+}
+
+.service-group strong {
+  color: #000;
+}
+
+.services-image {
+  flex: 1 1 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .services-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-container, .services-image {
+    width: 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div id="headerInner" class="header-inner collapsed">
+      <a href="website.html" class="logo-title">
+        <h1 class="title">
+          <img src="logooo.png" alt="Expo Nails Logo" class="logo" />
+          <b>Expo</b> <b class="colortext">Nails</b>
+        </h1>
+      </a>
+      <button class="hamburger" aria-label="Toggle Navigation Menu" onclick="toggleMenu()">☰</button>
+      <nav class="navbar" id="navbar">
+        <a href="website.html"><i class="fas fa-home"></i> Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="website.html#contact">Contact</a>
+        <a href="about.html">About Us</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="services-section">
+    <h2 class="services-heading">~ Our Services ~</h2>
+
+    <!-- Full Menu Image Preview -->
+    <div class="menu-image-preview" style="text-align:center; margin-bottom: 40px;">
+        <img src="Spa.png" alt="Full Spa Menu" style="max-width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+    </div>    
+
+    <div class="services-wrapper">
+      <!-- Left: Service List -->
+      <div class="services-container">
+        <div class="service-group">
+          <h3>Acrylic Nails</h3>
+          <p>Full Set – <strong>$35+</strong></p>
+          <p>Full Set Gel – <strong>$40+</strong></p>
+          <p>Fill In – <strong>$25+</strong></p>
+          <p>Fill In Gel – <strong>$35+</strong></p>
+        </div>
+        <div class="service-group">
+          <h3>Pink & White</h3>
+          <p>Full Set – <strong>$50+</strong></p>
+          <p>Fill In (2 Color) – <strong>$40+</strong></p>
+          <p>Fill In (1 Color) – <strong>$35+</strong></p>
+        </div>
+        <div class="service-group">
+          <h3>Powder Gel</h3>
+          <p>Full Set – <strong>$45+</strong></p>
+          <p>Fill In – <strong>$35+</strong></p>
+          <p>Overlay – <strong>$45+</strong></p>
+        </div>
+        <div class="service-group">
+          <h3>Dip Powder</h3>
+          <p>Ombre Dip – <strong>$55+</strong></p>
+          <p>Dip w/ 1 Color – <strong>$45+</strong></p>
+          <p>Add Nail Tip – <strong>$5+</strong></p>
+        </div>
+        <div class="service-group">
+          <h3>Manicures</h3>
+          <p>Manicure (Reg) – <strong>$25+</strong></p>
+          <p>Gel Manicure – <strong>$35+</strong></p>
+          <p>Gel Polish Change – <strong>$25+</strong></p>
+        </div>
+        <div class="service-group">
+          <h3>Spa Pedicure</h3>
+          <p>Royal Sauna Pedi (Reg) – <strong>$85+</strong></p>
+          <p>Royal Sauna Pedi with Gel – <strong>$100+</strong></p>
+          <p>Basic Pedi (Reg) – <strong>$35+</strong></p>
+          <p>Basic Pedi with Gel – <strong>$50+</strong></p>
+          <p>Deluxe Pedi – <strong>$45+</strong></p>
+          <p>Deluxe Pedi with Gel – <strong>$60+</strong></p>
+          <p>Luxury (Volcano) – <strong>$55+</strong></p>
+          <p>Luxury with Gel – <strong>$70+</strong></p>
+          <p>Add Paraffin Wax – <strong>+$15</strong></p>
+        </div>
+        <div class="service-group">
+          <h3>Waxing</h3>
+          <p>Eyebrow – <strong>$12+</strong></p>
+          <p>Lip – <strong>$10+</strong></p>
+          <p>Chin – <strong>$15+</strong></p>
+          <p>Whole Face – <strong>$30+</strong></p>
+          <p>Underarm – <strong>$30+</strong></p>
+          <p>Legs (Half) – <strong>$50+</strong></p>
+          <p>Arms – <strong>$40+</strong></p>
+          <p>Bikini – <strong>$75+</strong></p>
+          <p>Brazilian – <strong>$100+</strong></p>
+        </div>
+        <div class="service-group">
+          <h3>Kid's Menu</h3>
+          <p>Manicure – <strong>$15+</strong></p>
+          <p>Gel Manicure – <strong>$30+</strong></p>
+          <p>Gel Hand – <strong>$20+</strong></p>
+          <p>Pedicure – <strong>$25+</strong></p>
+        </div>
+        <div class="service-group">
+          <h3>Eyelash & Brows</h3>
+          <p>Strip – <strong>$20+</strong></p>
+          <p>Individual – <strong>$30+</strong></p>
+          <p>Individual Mink – <strong>$150+</strong></p>
+          <p>Strip + Individual – <strong>$30+</strong></p>
+          <p>Eyebrow Tint – <strong>$25+</strong></p>
+          <p>Microblading – <strong>Varies</strong></p>
+        </div>
+        <div class="service-group">
+          <h3>Extras</h3>
+          <p>Toe Nails Gel Set – <strong>$45+</strong></p>
+          <p>Toe Nails Powder + Gel – <strong>$50+</strong></p>
+          <p>Polish Change Hands/Feet – <strong>$15+</strong></p>
+          <p>French Tip Add-On – <strong>$5+</strong></p>
+          <p>Design/Repair/Removal – <strong>$5+</strong></p>
+          <p>Acrylic Removal w/o Service – <strong>$10+</strong></p>
+        </div>
+      </div>
+
+      <!-- Right: Image -->
+      <div class="services-image">
+        <img src="https://prettynails-nc.com/assets/images/pretty-nails-service-02.jpg" alt="Spa Service Image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (copied from website.html) -->
+  <div class="social-links">
+    <a href="https://www.instagram.com/exponailsnbeauty/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon"> Instagram
+    </a>
+    <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon"> Facebook
+    </a>
+  </div>
+
+  <footer>
+    <p><i class="fas fa-map-marker-alt"></i> 212-B Clinton Blvd, Clinton, MS 39056</p>
+    <p><i class="fas fa-phone-alt"></i> <a href="tel:6019241413" class="phone-link">(601) 924-1413</a></p>
+    <p><i class="fas fa-envelope"></i> exponails2019@gmail.com</p>
+    <p><i class="fas fa-clock"></i> Open Hours: Mon–Sat, 9:00 AM – 7:00 PM</p>
+    <p><i class="fas fa-calendar-check"></i> <strong>Walk-ins Welcome – No Appointment Needed</strong></p>
+  </footer>
+
+  <div>
+    <br><br>
+    <p class="endings">Expo Nails & Beauty © All Rights Reserved - 2025 - Designed by Hoan Tran <br><br>
+      <a href="website.html">Expo Nails & Beauty</a> <b>|</b>
+      <a href="website.html">Nails salon in Clinton, MS 39056</a> <b>|</b>
+      <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/">Blog</a>
+    </p>
+    <br>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById("navbar");
+      const headerInner = document.getElementById("headerInner");
+      navbar.classList.toggle("show");
+      headerInner.classList.toggle("expanded");
+      headerInner.classList.toggle("collapsed");
+    }
+
+    window.onload = () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+    };
+  </script>
+</body>
+</html>

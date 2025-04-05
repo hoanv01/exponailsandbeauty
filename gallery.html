@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Gallery | Expo Nails</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Gallery - Expo Nails</title>
   <link rel="icon" href="logooo.png">
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -161,19 +161,25 @@
 </head>
 <body>
   <div class="header">
-    <a href="website.html">
-      <h1 class="title">
-        <img src="logooo.png" alt="Expo Nails Logo" class="logo" />
-        <b>Expo</b> <b class="colortext">Nails</b>
-      </h1>
-    </a>
-    <nav class="navbar">
-      <a href="website.html"><i class="fas fa-home"></i> Home</a>
-      <a href="website.html#services">Services</a>
-      <a href="website.html#gallery">Gallery</a>
-      <a href="website.html#contact">Contact</a>
-    </nav>
-  </div>
+    <div id="headerInner" class="header-inner">
+      <a href="website.html" class="logo-title">
+        <h1 class="title">
+          <img src="logooo.png" alt="Expo Nails Logo" class="logo" />
+          <b>Expo</b> <b class="colortext">Nails</b>
+        </h1>
+      </a>
+    
+      <button class="hamburger" aria-label="Toggle Navigation Menu" onclick="toggleMenu()">☰</button>
+    
+      <nav class="navbar" id="navbar">
+        <a href="website.html"><i class="fas fa-home"></i> Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="website.html#contact">Contact</a>
+        <a href="about.html">About Us</a>
+      </nav>
+    </div>      
+  </div>    
 
   <div class="image-gallery">
     <h2 class="gallery-heading">All Nail Designs</h2>
@@ -181,6 +187,34 @@
     <div id="galleryGrid" class="gallery-grid"></div>
 
     <div class="pagination" id="pagination"></div>
+  </div>
+
+  <!-- Footer (copied from website.html) -->
+  <div class="social-links">
+    <a href="https://www.instagram.com/exponailsnbeauty/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="icon"> Instagram
+    </a>
+    <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="icon"> Facebook
+    </a>
+  </div>
+
+  <footer>
+    <p><i class="fas fa-map-marker-alt"></i> 212-B Clinton Blvd, Clinton, MS 39056</p>
+    <p><i class="fas fa-phone-alt"></i> <a href="tel:6019241413" class="phone-link">(601) 924-1413</a></p>
+    <p><i class="fas fa-envelope"></i> exponails2019@gmail.com</p>
+    <p><i class="fas fa-clock"></i> Open Hours: Mon–Sat, 9:00 AM – 7:00 PM</p>
+    <p><i class="fas fa-calendar-check"></i> <strong>Walk-ins Welcome – No Appointment Needed</strong></p>
+  </footer>
+
+  <div>
+    <br><br>
+    <p class="endings">Expo Nails & Beauty © All Rights Reserved - 2025 - Designed by Hoan Tran <br><br>
+      <a href="website.html">Expo Nails & Beauty</a> <b>|</b>
+      <a href="website.html">Nails salon in Clinton, MS 39056</a> <b>|</b>
+      <a href="https://www.facebook.com/ExpoNailsAndBeautyClinton/">Blog</a>
+    </p>
+    <br>
   </div>
 
   <script>
@@ -422,6 +456,53 @@
   <a href="tel:6019241413" class="call-icon" title="Call Us">
     <i class="fas fa-phone-alt"></i>
   </a>
+
+  <script>
+    function toggleMenu() {
+      if (window.innerWidth > 768) return; // don't toggle on desktop
+
+      const navbar = document.getElementById("navbar");
+      const headerInner = document.getElementById("headerInner");
+
+      navbar.classList.toggle("show");
+      headerInner.classList.toggle("expanded");
+      headerInner.classList.toggle("collapsed");
+
+      setTimeout(() => {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        document.body.style.setProperty('--header-height', `${headerHeight}px`);
+      }, 300);
+    }
+  
+    // Collapse on load
+    window.addEventListener("load", () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+      const headerHeight = document.querySelector('.header').offsetHeight;
+      document.body.style.setProperty('--header-height', `${headerHeight}px`);
+    });
+  </script>    
+
+  <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>    
+
+  <script>
+    // Show the button when scrolling down
+    window.onscroll = function () {
+      const scrollBtn = document.getElementById("scrollBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+
+    // Scroll to top smoothly
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>

@@ -27,14 +27,79 @@ body {
   left: 0;
   width: 100%;
   z-index: 999;
+  background-color: lavender; /* ✅ Now the entire header is lavender */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  background-color: #f7f7f7;
   padding-top: env(safe-area-inset-top, 0);
 }
 
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: max-height 0.4s ease;
+  overflow: hidden;
+}
+
+/* Default collapsed height: title + hamburger only */
+.header-inner.collapsed {
+  max-height: 120px; /* enough for h1 and hamburger */
+}
+
+/* When expanded (menu shown) */
+.header-inner.expanded {
+  max-height: 300px; /* enough for h1 + navbar */
+}
+
+/* Navigation Bar */
+/* Default: hidden on mobile */
+.navbar {
+  display: none;
+  background: #fefefe;
+  font-family: "Pacifico", cursive, Georgia;
+}
+
+/* Show when .show is toggled */
+.navbar.show {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+/* Desktop view: always show */
+@media screen and (min-width: 769px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 0;
+  }
+
+  .navbar.show {
+    display: flex;
+  }
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: rgb(150, 150, 255);
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: goldenrod;
+}
+
+
 body {
-  padding-top: calc(150px + env(safe-area-inset-top));
+  padding-top: var(--header-height, 150px);
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Optional: Full-screen elements */
@@ -49,7 +114,6 @@ body {
 
 h1.title {
   color: goldenrod;
-  background-color: lavender;
   text-align: center;
   padding: 10px;
   font-size: 50px;
@@ -79,17 +143,81 @@ b.colortext {
 }
 
 @media screen and (max-width: 768px) {
-  h1.title {
-    font-size: 40px;
-  }
-  .logo {
-    height: 60px;
-  }
   .navbar {
+    display: none;
     flex-direction: column;
-    gap: 10px;
+    background-color: #f7f7f7;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 998;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 35%;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: rgb(150, 150, 255);
+    cursor: pointer;
+    z-index: 999;
+    transition: color 0.3s ease;
+  }
+
+  .hamburger:hover {
+    background-color: none;
+    color: goldenrod;
+  }
+
+  .header-inner {
+    flex-direction: column;
+  }
+
+  .header-inner.expanded {
+    max-height: 300px;
+  }
+
+  .header-inner.collapsed {
+    max-height: 120px;
   }
 }
+
+@media screen and (min-width: 769px) {
+  .navbar {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 0;
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-height: none !important;
+  }
+}
+
+
 /* Carousel Images */
 /* Fade Carousel */
 .fade-carousel {
@@ -310,28 +438,6 @@ b.colortext {
   color: #555;
   line-height: 1.6;
   margin-bottom: 15px;
-}
-
-/* Navigation Bar */
-.navbar {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 10px 0;
-  background: #fefefe;
-  font-family: "Pacifico", cursive, Georgia;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: rgb(150, 150, 255);
-  font-weight: bold;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: goldenrod;
 }
 
 /* Bio Section */
@@ -806,19 +912,9 @@ footer {
     scroll-snap-align: start;
   }
   .gallery-grid img {
-    width: 250px;
+    width: 350px;
     height: auto;
     aspect-ratio: 1 / 1;
-  }
-  .gallery-grid::after {
-    content: "→";
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 24px;
-    color: #666;
-    pointer-events: none;
   }
 }
 
@@ -964,13 +1060,3 @@ footer {
 }
 
 
-/* Mobile Iphone 
-1. The swiping is grippy and not smooth, consider add like something to let the
-user know that they can swipe (for static gallery)
-2. The font is weird in safari and brave
-3. The white part at the top fade carousel slips out a little bit
-4. Also add smooth swipe for Carousel
-5. For static gallery you can exit touching the black but you can for view more
-6. The white part of the island 
-7. Phone number has the underline
-*/
