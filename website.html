@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Fixed Header -->
@@ -324,7 +325,7 @@
     <!-- Footer -->
     <footer>
       <p><i class="fas fa-map-marker-alt"></i> 212-B Clinton Blvd, Clinton, Mississippi 39056</p>
-      <p><i class="fas fa-phone-alt"></i> (601) 924-1413</p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:6019241413" class="phone-link">(601) 924-1413</a></p>
       <p><i class="fas fa-envelope"></i> exponails2019@gmail.com</p>
       <p><i class="fas fa-clock"></i> Open Hours: Monday – Saturday, 9:00 AM – 7:00 PM</p>
       <p><i class="fas fa-calendar-check"></i> <strong>We welcome walk-ins only—no appointment needed!</strong></p>
@@ -415,8 +416,12 @@
       let autoSlideInterval;
       let paused = false;
       const dotsContainer = document.getElementById("carousel-dots");
+      let currentSlide = slides[0];
+      let isDragging = false;
+      let swipeStartX = 0;
+      let swipeEndX = 0;
+      let dragOffset = 0;
 
-      // Create dots dynamically
       for (let i = 0; i < slides.length; i++) {
         const dot = document.createElement("span");
         dot.classList.add("dot");
@@ -432,9 +437,11 @@
         for (let i = 0; i < slides.length; i++) {
           slides[i].style.opacity = "0";
           slides[i].classList.remove("active");
+          slides[i].style.transform = "translateX(0)";
         }
         slides[n].style.opacity = "1";
         slides[n].classList.add("active");
+        currentSlide = slides[n];
         updateDots(n);
       }
 
@@ -449,10 +456,8 @@
       function moveSlide(n) {
         clearInterval(autoSlideInterval);
         slideIndex += n;
-
         if (slideIndex >= slides.length) slideIndex = 0;
         if (slideIndex < 0) slideIndex = slides.length - 1;
-
         showSlides(slideIndex);
         if (!paused) startAutoSlide();
       }
@@ -472,7 +477,6 @@
         startAutoSlide();
       }
 
-      // Init
       showSlides(slideIndex);
       startAutoSlide();
 
@@ -486,6 +490,67 @@
         paused = false;
         startAutoSlide();
       });
+
+      document.querySelectorAll('.fade-carousel img').forEach(img => {
+        img.draggable = false;
+      });
+
+      carousel.addEventListener("touchstart", (e) => {
+        swipeStartX = e.touches[0].clientX;
+        swipeEndX = swipeStartX;
+        isDragging = true;
+        carousel.classList.add("dragging");
+      });
+
+      carousel.addEventListener("touchmove", (e) => {
+        if (isDragging) {
+          swipeEndX = e.touches[0].clientX;
+          dragOffset = swipeEndX - swipeStartX;
+          currentSlide.style.transform = `translateX(${dragOffset}px)`;
+        }
+      });
+
+      carousel.addEventListener("touchend", (e) => {
+        isDragging = false;
+        carousel.classList.remove("dragging");
+        currentSlide.style.transform = `translateX(0)`;
+        swipeEndX = e.changedTouches[0].clientX;
+        handleSwipe(swipeStartX, swipeEndX);
+      });
+
+      carousel.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        swipeStartX = e.clientX;
+        swipeEndX = swipeStartX;
+        carousel.classList.add("dragging");
+        carousel.style.userSelect = "none";
+      });
+
+      carousel.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        swipeEndX = e.clientX;
+        dragOffset = swipeEndX - swipeStartX;
+        currentSlide.style.transform = `translateX(${dragOffset}px)`;
+      });
+
+      carousel.addEventListener("mouseup", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        carousel.classList.remove("dragging");
+        carousel.style.userSelect = "";
+        currentSlide.style.transform = `translateX(0)`;
+        handleSwipe(swipeStartX, swipeEndX);
+      });
+
+      function handleSwipe(start, end) {
+        const diff = start - end;
+        const threshold = 50;
+        if (diff > threshold) {
+          moveSlide(1);
+        } else if (diff < -threshold) {
+          moveSlide(-1);
+        }
+      }
     </script>
 
     <div id="lightbox" class="lightbox">
