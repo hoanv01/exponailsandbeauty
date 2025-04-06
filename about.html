@@ -134,15 +134,62 @@
 
   <script>
     function toggleMenu() {
+      if (window.innerWidth > 768) return; // don't toggle on desktop
+
+      const navbar = document.getElementById("navbar");
+      const headerInner = document.getElementById("headerInner");
+
+      navbar.classList.toggle("show");
+      headerInner.classList.toggle("expanded");
+      headerInner.classList.toggle("collapsed");
+
+      setTimeout(() => {
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        document.body.style.setProperty('--header-height', `${headerHeight}px`);
+      }, 300);
+    }
+  
+    // Collapse on load
+    window.addEventListener("load", () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+      const headerHeight = document.querySelector('.header').offsetHeight;
+      document.body.style.setProperty('--header-height', `${headerHeight}px`);
+    });
+  </script>    
+  
+  <script>
+    function toggleMenu() {
       const navbar = document.getElementById("navbar");
       const headerInner = document.getElementById("headerInner");
       const hamburger = document.querySelector(".hamburger");
-
+  
       navbar.classList.toggle("show");
       headerInner.classList.toggle("expanded");
       headerInner.classList.toggle("collapsed");
       hamburger.classList.toggle("active");
     }
+  
+    window.onload = () => {
+      const headerInner = document.getElementById("headerInner");
+      headerInner.classList.add("collapsed");
+    };
+  </script>
+  
+  <script>
+    // Clear mobile menu state on desktop resize
+    window.addEventListener('resize', () => {
+      const navbar = document.getElementById('navbar');
+      const headerInner = document.getElementById('headerInner');
+      const hamburger = document.querySelector('.hamburger');
+  
+      if (window.innerWidth >= 769) {
+        navbar.classList.remove('show');
+        headerInner.classList.remove('expanded');
+        headerInner.classList.add('collapsed');
+        hamburger.classList.remove('active');
+      }
+    });
   </script>
 
 </body>
