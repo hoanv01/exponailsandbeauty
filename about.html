@@ -20,7 +20,11 @@
         </h1>
       </a>
     
-      <button class="hamburger" aria-label="Toggle Navigation Menu" onclick="toggleMenu()">☰</button>
+      <button class="hamburger" aria-label="Toggle Navigation Menu" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>     
     
       <nav class="navbar" id="navbar">
         <a href="website.html"><i class="fas fa-home"></i> Home</a>
@@ -106,6 +110,40 @@
       document.body.style.setProperty('--header-height', `${headerHeight}px`);
     });
   </script>    
+
+  <script>
+    // Show the button when scrolling down
+    window.onscroll = function () {
+      const scrollBtn = document.getElementById("scrollBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+
+    // Scroll to top smoothly
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+  <a href="tel:6019241413" class="call-icon" title="Call Us">
+    <i class="fas fa-phone-alt"></i>
+  </a>
+
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById("navbar");
+      const headerInner = document.getElementById("headerInner");
+      const hamburger = document.querySelector(".hamburger");
+
+      navbar.classList.toggle("show");
+      headerInner.classList.toggle("expanded");
+      headerInner.classList.toggle("collapsed");
+      hamburger.classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>

@@ -19,7 +19,11 @@
           </h1>
         </a>
       
-        <button class="hamburger" aria-label="Toggle Navigation Menu" onclick="toggleMenu()">☰</button>
+        <button class="hamburger" aria-label="Toggle Navigation Menu" onclick="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>        
       
         <nav class="navbar" id="navbar">
           <a href="website.html"><i class="fas fa-home"></i> Home</a>
@@ -711,5 +715,24 @@
       });
     </script>    
     
+    <script>
+      function toggleMenu() {
+        const navbar = document.getElementById("navbar");
+        const headerInner = document.getElementById("headerInner");
+        const hamburger = document.querySelector(".hamburger");
+
+        navbar.classList.toggle("show");
+        headerInner.classList.toggle("expanded");
+        headerInner.classList.toggle("collapsed");
+        hamburger.classList.toggle("active");
+      }
+
+      window.onload = () => {
+        const headerInner = document.getElementById("headerInner");
+        headerInner.classList.add("collapsed");
+      };
+    </script>
+    
+
 </body>
 </html>
