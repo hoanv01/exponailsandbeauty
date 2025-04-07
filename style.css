@@ -184,8 +184,8 @@ b.colortext {
     cursor: pointer;
     z-index: 999;
     position: absolute;
-    top: 32.5%;
-    right: 5px;
+    top: 28%;
+    right: 8px;
     padding: 0;
   }
 
@@ -526,7 +526,7 @@ p.bio {
 .services-heading {
   font-size: 30px;
   margin-top: 50px;
-  margin-bottom: 0px;
+  margin-bottom: -10px;
   font-family: Times;
   font-weight: lighter;
   text-align: center;
@@ -583,11 +583,12 @@ p.bio {
 }
 
 .accordion-body {
-  padding: 0 24px 20px;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
   font-size: 16px;
   color: #333;
-  animation: fadeIn 0.3s ease;
+  transition: max-height 0.4s ease, padding 0.4s ease;
 }
 
 .accordion-body p {
@@ -596,7 +597,8 @@ p.bio {
 }
 
 .accordion-item.active .accordion-body {
-  display: block;
+  max-height: 500px; /* enough space for most content, adjust if needed */
+  padding-bottom: 20px;
 }
 
 .accordion-header .arrow {
@@ -620,27 +622,20 @@ p.bio {
 }
 
 /* Scrolling Gallery */
-/* Scrolling Gallery */
 .scroll-gallery {
   overflow: hidden;
   width: 100%;
   padding: 30px 0;
   background-color: white;
-  white-space: nowrap;
   position: relative;
-
-  /* Reduce this to make less space below it */
-  margin-bottom: -50px; /* was 90px */
 }
 
-/* Scroll Track */
 .scroll-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 50s linear infinite;
+  animation: scroll-loop 30s linear infinite;
 }
 
-/* Scroll Track Images */
 .scroll-track img {
   width: 250px;
   height: 250px;
@@ -651,13 +646,12 @@ p.bio {
   transition: transform 0.3s ease;
 }
 
-/* Hover zoom effect */
 .scroll-track img:hover {
   transform: scale(1.1);
 }
 
-/* Scroll left animation */
-@keyframes scroll-left {
+/* Continuous scroll animation */
+@keyframes scroll-loop {
   0% {
     transform: translateX(0);
   }
@@ -666,6 +660,17 @@ p.bio {
   }
 }
 
+.gallery-subheading {
+  text-align: center;
+  font-family: "Apple Chancery", cursive;
+  font-size: 28px;
+  font-weight: bold;
+  color: goldenrod;
+  margin: 80px auto 20px auto; /* center the block */
+  border-bottom: 2px solid goldenrod;
+  padding-bottom: 5px;
+  max-width: 280px; /* limit how wide the underline goes */
+}
 
 /* Social Links */
 .social-links {
@@ -910,10 +915,12 @@ footer {
   font-family: "Apple Chancery", cursive;
   font-size: 28px;
   color: goldenrod;
+  font-weight: 700;
   margin-bottom: 40px;
   border-bottom: 2px solid goldenrod;
   display: inline-block;
   padding-bottom: 5px;
+  width: 250px;
 }
 
 .gallery-grid {
