@@ -625,9 +625,10 @@ p.bio {
 .scroll-gallery {
   overflow: hidden;
   width: 100%;
-  padding: 30px 0;
+  padding: 20px 0;
   background-color: white;
   position: relative;
+  margin-bottom: 150px;
 }
 
 .scroll-track {
@@ -666,7 +667,7 @@ p.bio {
   font-size: 28px;
   font-weight: bold;
   color: goldenrod;
-  margin: 80px auto 20px auto; /* center the block */
+  margin: 120px auto 25px auto; /* center the block */
   border-bottom: 2px solid goldenrod;
   padding-bottom: 5px;
   max-width: 280px; /* limit how wide the underline goes */
@@ -722,7 +723,7 @@ footer {
 
 /* Map Section */
 .map-section {
-  padding: 0 0 80px 0;
+  padding: 0 0 100px 0;
   margin: 0;
   text-align: center;
   background-color: #fefefe;
@@ -857,6 +858,7 @@ footer {
   padding: 20px;
   box-sizing: border-box;
   align-items: flex-start; /* Ensure items align properly */
+  margin-bottom: -5px;
 }
 
 /* Services Container */
@@ -908,7 +910,7 @@ footer {
   text-align: center;
 
   /* Add some spacing below it */
-  margin-bottom: 60px;
+  margin-bottom: 0px;
 }
 
 .gallery-heading {
